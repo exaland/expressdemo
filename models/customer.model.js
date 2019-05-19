@@ -5,7 +5,7 @@ const user= 'exaland';
 const database = 'drivervtc';
 const password  = 'SHENZHEN93J4';
 
-mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`);
+mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, { useNewUrlParser: true, useCreateIndex: true});
 
 let CustomerSchema = new mongoose.Schema({
     name: String,

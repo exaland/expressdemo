@@ -6,7 +6,9 @@ let customerRoute = require('./src/routes/customer');
 let path = require('path');
 let bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
 app.use((req,res,next) => {
     console.log(`${new Date().toString()} => ${req.originalUrl}`, req.body);

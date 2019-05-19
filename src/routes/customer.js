@@ -9,6 +9,11 @@ router.post('/customer', (req,res) => {
     if (!req.body) {
         return res.status(400).send('Request body is Missing');
     }
+
+    if(!req.body.email) {
+        // ...
+        return res.status(400).send('Email Request body is Missing');
+      }
     // let user = {
     //     name:  'firstname lastname',
     //     email : 'email@gmail.com'
